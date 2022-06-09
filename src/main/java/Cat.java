@@ -1,16 +1,16 @@
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Cat {
     public String name;
+    public int appetite;
     public boolean fullness;
 
-    public Cat(String name, boolean fullness) {
+    public Cat(String name, int appetite, boolean fullness) {
         this.name = name;
+        this.appetite = appetite;
         this.fullness = fullness;
     }
 
     public void eat(Plate plate) {
-        plate.decreaseFood(ThreadLocalRandom.current().nextInt(4) + 3);
-        System.out.println("Кот" + name + "съел" + ThreadLocalRandom.current().nextInt(4) + 3 + "корма" );
+        plate.decreaseFood(appetite);
     }
 }
